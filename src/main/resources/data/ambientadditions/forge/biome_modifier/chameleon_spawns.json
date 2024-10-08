@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#ambientadditions:chameleon_spawns",
+  "spawners":
+  {
+    "type": "ambientadditions:chameleon",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #",
+        "BS"
+    ],
+    "key": {
+        "#": {
+            "tag": "forge:feathers"
+        },
+        "B": {
+            "item": "minecraft:bamboo"
+        },
+        "S": {
+            "item": "minecraft:spider_eye"
+        }
+    },
+    "result": {
+        "item": "ambientadditions:dart",
+        "count": 8
+    }
+}
