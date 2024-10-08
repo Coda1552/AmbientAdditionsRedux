@@ -30,8 +30,8 @@ public class ClientEvents {
         EntityRenderers.register(AAEntities.CHAMELEON.get(), (ctx) -> new GenericGeoRenderer<>(ctx, () -> {
             TextureVariantModel<Chameleon> model = new TextureVariantModel<>("veiled_chameleon");
             ArrayList<ResourceLocation> textures = new ArrayList<>();
-            for (int i = 1; i <= 7; i++) {
-                textures.add(AmbientAdditions.rl("textures/entity/veiled_chameleon/veiled_chameleon_" + i + ".png"));
+            for (int i = 1; i <= Chameleon.VARIANTS; i++) {
+                textures.add(AmbientAdditions.rl("textures/entity/chameleon/veiled_" + i + ".png"));
             }
             model.setTextures(Chameleon::getVariant, textures);
             return model;

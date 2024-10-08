@@ -39,6 +39,7 @@ import javax.annotation.Nullable;
 public class Chameleon extends Animal implements GeoEntity {
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Chameleon.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD = Ingredient.of(Items.SPIDER_EYE);
+    public static final int VARIANTS = 4;
 
     public Chameleon(EntityType<? extends Animal> animal, Level level) {
         super(animal, level);
@@ -70,7 +71,7 @@ public class Chameleon extends Animal implements GeoEntity {
     @Override
     public Chameleon getBreedOffspring(ServerLevel world, AgeableMob animal) {
         Chameleon chameleon = AAEntities.CHAMELEON.get().create(world);
-        int i = random.nextInt(7);
+        int i = random.nextInt(VARIANTS);
         chameleon.setVariant(i);
         return chameleon;
     }
@@ -109,7 +110,7 @@ public class Chameleon extends Animal implements GeoEntity {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         if (dataTag == null) {
-            setVariant(random.nextInt(7));
+            setVariant(random.nextInt(VARIANTS));
         } else {
             if (dataTag.contains("Variant", 3)){
                 this.setVariant(dataTag.getInt("Variant"));
