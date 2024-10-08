@@ -28,7 +28,7 @@ public class ClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(AAEntities.CHAMELEON.get(), (ctx) -> new GenericGeoRenderer<>(ctx, () -> {
-            TextureVariantModel<Chameleon> model = new TextureVariantModel<>("veiled_chameleon");
+            TextureVariantModel<Chameleon> model = new TextureVariantModel<>("chameleon");
             ArrayList<ResourceLocation> textures = new ArrayList<>();
             for (int i = 1; i <= Chameleon.VARIANTS; i++) {
                 textures.add(AmbientAdditions.rl("textures/entity/chameleon/veiled_" + i + ".png"));
